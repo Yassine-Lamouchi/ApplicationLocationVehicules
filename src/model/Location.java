@@ -10,7 +10,7 @@ public class Location {
     private LocalDate dateFin;
     private double montantTotal;
 
-    // ------------------- Constructeur ---------------------
+    // Constructeur
     public Location(Client client, Vehicule vehicule, LocalDate dateDebut, LocalDate dateFin) {
         this.idClient = client.getIdClient();
         this.idVehicule = vehicule.getReference();
@@ -20,7 +20,7 @@ public class Location {
         this.montantTotal = calculerMontant(vehicule.getPrixJour());
     }
 
-    // ------------------- Constructeur utilisé au chargement CSV ---------------------
+    // Constructeur utilisé au chargement CSV
     public Location(String idClient, String idVehicule, LocalDate dateDebut, LocalDate dateFin, double montantTotal) {
         this.idClient = idClient;
         this.idVehicule = idVehicule;
@@ -29,7 +29,7 @@ public class Location {
         this.montantTotal = montantTotal;
     }
 
-    // ------------------- Calcul du montant ---------------------
+    // Calcul du montant
     private double calculerMontant(double prixJour) {
         // Calculer le nombre de jours entre dateDebut et dateFin
         int jours = (int) dateDebut.until(dateFin).getDays();
@@ -38,7 +38,7 @@ public class Location {
         return jours * prixJour;
     }
 
-    // ------------------- Getters ---------------------
+    // Getters
     public String getIdClient() {
         return idClient;
     }
@@ -59,7 +59,7 @@ public class Location {
         return montantTotal;
     }
 
-    // ------------------- CSV (toString) ---------------------
+    // CSV (toString)
     @Override
     public String toString() {
         return idClient + "," + idVehicule + "," + dateDebut + "," + dateFin + "," + montantTotal;
