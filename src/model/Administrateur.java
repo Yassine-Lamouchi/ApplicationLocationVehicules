@@ -26,13 +26,8 @@ public class Administrateur {
         this.motDePasse = motDePasse;
     }
 
-    /**
-     * Authentifie l'administrateur en comparant login/motDePasse
-     *
-     * @param login      fourni
-     * @param motDePasse fourni
-     * @return true si identifiants corrects, false sinon
-     */
+    // Authentifie l'administrateur en comparant login/motDePasse
+    
     public boolean authentifier(String login, String motDePasse) {
         return this.login.equals(login) && this.motDePasse.equals(motDePasse);
     }
