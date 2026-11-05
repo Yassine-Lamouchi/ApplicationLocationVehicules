@@ -22,8 +22,9 @@ public class AgenceLocation {
         this.locationsActives = new ArrayList<>();
     }
 
-    // --------------------- Parc automobile ---------------------
-    /** Partie 1 **/
+    // Parc automobile
+    
+    /*    Partie 1      */
 
     public List<Vehicule> getParc() {
         return new ArrayList<>(parc);
@@ -101,11 +102,9 @@ public class AgenceLocation {
         return dispo;
     }
 
-    /** fin partie 1 **/
-
     /** partie 2 **/
 
-    // --------------------- Gestion des clients ---------------------
+    // Gestion des clients
 
     public void ajouterClient(Client client) throws LocationException {
         if (client == null) {
@@ -131,11 +130,10 @@ public class AgenceLocation {
         return null;
     }
 
-    // --------------------- Gestion des locations ---------------------
+    // Gestion des locations
 
-    /**
-     * Crée une location entre client et véhicule
-     */
+    /*   Crée une location entre client et véhicule   */
+    
     public void louer(Client client, String vehiculeId, LocalDate debut, LocalDate fin) throws LocationException {
         Vehicule v = chercherVehiculeParId(vehiculeId);
         if (v == null)
@@ -150,9 +148,8 @@ public class AgenceLocation {
         locationsActives.add(loc);
     }
 
-    /**
-     * Affiche toutes les locations actuellement en cours
-     */
+    /*   Affiche toutes les locations actuellement en cours   */
+    
     public void afficherLocationsActives() {
         if (locationsActives.isEmpty()) {
             System.out.println("Aucune location active.");
@@ -163,9 +160,7 @@ public class AgenceLocation {
         }
     }
 
-    /**
-     * Restitue un véhicule loué
-     */
+    /* Restitue un véhicule loué */
     public void restituer(String vehiculeId) throws LocationException {
         if (vehiculeId == null || vehiculeId.isEmpty()) {
             throw new LocationException("La référence du véhicule ne peut pas être vide.");
@@ -195,7 +190,7 @@ public class AgenceLocation {
         throw new LocationException("Aucune location trouvée pour le véhicule : " + vehiculeId);
     }
 
-    /** fin partie 2 **/
+    /* fin partie 2 */
 
     public void chargerDonnees() {
         try {
