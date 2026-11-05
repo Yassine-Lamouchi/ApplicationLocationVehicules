@@ -10,7 +10,7 @@ public class Moto extends Vehicule {
         this.cylindre = cylindre;
     }
 
-    // ------------------- Constructeur utilisé au chargement CSV ---------------------
+    // Constructeur utilisé au chargement CSV
     public Moto(String ref, String marque, String modele, double prixJour, int cylindre) {
         super(ref, marque, modele, prixJour);
         this.cylindre = cylindre;
