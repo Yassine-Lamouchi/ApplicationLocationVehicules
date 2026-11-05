@@ -10,7 +10,7 @@ public class Voiture extends Vehicule {
         this.nbPortes = nbPortes;
     }
 
-    // ------------------- Constructeur utilisé au chargement CSV ---------------------
+    // Constructeur utilisé au chargement CSV
     public Voiture(String ref, String marque, String modele, double prixJour, int nbPortes) {
         super(ref, marque, modele, prixJour);
         this.nbPortes = nbPortes;
